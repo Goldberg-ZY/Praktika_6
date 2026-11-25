@@ -1,0 +1,81 @@
+Task_1
+try:
+temperature = float(input("Температура (°C): "))
+pressure = int(input("Верхнее давление: "))
+pulse = int(input("Пульс (уд/мин): "))
+severe = (
+temperature < 35 or temperature > 38
+or pressure < 105 or pressure > 140
+or pulse < 55 or pulse > 110
+ )
+mild = (
+35 <= temperature < 36 or 37 < temperature <= 38
+or 105 <= pressure < 110 or 130 < pressure <= 140
+or 55 <= pulse < 60 or 100 < pulse <= 110
+)
+if severe:
+print("Требуется врач")
+elif mild:
+print("Легкое недомогание")
+else:
+print("Нормальное состояние")
+except ValueError:
+print("Ошибка ввода: введите корректные числа")
+
+Task_2
+try:
+pocket = int(input("Введите номер кармана (0–36): "))
+if not 0 <= pocket <= 36:
+print("ошибка ввода")
+elif pocket == 0:
+print("зеленый")
+elif 1 <= pocket <= 10 or 19 <= pocket <= 28:
+if pocket % 2 == 1:
+print("красный")
+else:
+print("черный")
+elif 11 <= pocket <= 18 or 29 <= pocket <= 36:
+if pocket % 2 == 1:
+print("черный")
+else:
+print("красный")
+except ValueError:
+print("ошибка ввода")
+
+Task_3
+try:
+x1, y1, x2, y2 = map(int, input("Введите x1 y1 x2 y2: ").split())
+if not all(1 <= value <= 8 for value in (x1, y1, x2, y2)):
+print("Ошибка ввода")
+elif (x1 + y1) % 2 == (x2 + y2) % 2:
+print("YES")
+else:
+print("NO")
+except ValueError:
+print("Ошибка ввода: введите четыре целых числа")
+
+
+Task_4
+try:
+x1, y1, x2, y2 = map(int, input("Введите x1 y1 x2 y2: ").split())
+if not all(1 <= value <= 8 for value in (x1, y1, x2, y2)):
+print("Ошибка ввода")
+elif abs(x1 - x2) == abs(y1 - y2):
+print("YES")
+else:
+print("NO")
+except ValueError:
+print("Ошибка ввода: введите четыре целых числа")
+
+Task_5
+try:
+x1, y1, x2, y2 = map(int, input("Введите x1 y1 x2 y2: ").split())
+if not all(1 <= value <= 8 for value in (x1, y1, x2, y2)):
+print("Ошибка ввода")
+elif (x1 == x2 or y1 == y2
+or abs(x1 - x2) == abs(y1 - y2)):
+print("YES")
+else:
+print("NO")
+except ValueError:
+print("Ошибка ввода: введите четыре целых числа")
